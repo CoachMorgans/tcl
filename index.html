@@ -665,18 +665,14 @@ body{font-family:'Segoe UI','Arial',sans-serif;background:var(--dk);color:var(--
         <div class="btn-row"><button class="btn btn-gr btn-full" id="order-btn" onclick="openWaveSecModal()" disabled>🔐 Commander avec Double Sécurité Wave</button></div>
       </div>
     </div>
-    <div class="wave-box" style="background:linear-gradient(145deg,rgba(0,80,200,.09),rgba(3,7,5,.98));border-color:rgba(0,144,255,.35)">
-      <div class="wave-title" style="font-size:.8em">🔐 DOUBLE SÉCURITÉ WAVE — PROTOCOLE v2</div>
-      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0;flex-wrap:wrap;font-size:.65em">
-        <span style="background:rgba(0,144,255,.15);border:1px solid rgba(0,144,255,.3);color:#5ab5ff;padding:4px 10px;border-radius:20px">① Paiement Wave</span>
-        <span style="color:var(--yL)">→</span>
-        <span style="background:rgba(232,184,40,.1);border:1px solid rgba(232,184,40,.3);color:var(--yL);padding:4px 10px;border-radius:20px">② Code Admin</span>
-        <span style="color:var(--gL)">→</span>
-        <span style="background:rgba(37,168,74,.1);border:1px solid rgba(37,168,74,.3);color:var(--gL);padding:4px 10px;border-radius:20px">③ Validé</span>
+    <div class="wave5-box" id="wave5-cli">
+      <div class="wave5-title">🔐 PAIEMENT WAVE — 5 LIENS MARCHANDS DÉDIÉS</div>
+      <span class="wave5-amount" id="wave5-cli-amount">--</span>
+      <div class="wave5-subtitle">Le lien Wave s'adapte automatiquement aux produits de votre panier</div>
+      <div class="wave5-btns" id="wave5-cli-btns">
+        <span style="font-size:.74em;color:var(--dim);padding:10px">Ajoutez des produits au panier pour voir le bouton Wave adapté.</span>
       </div>
-      <div class="wave-num">+225 07 67 81 43 33</div>
-      <img class="wave-qr" src="https://i.ibb.co/zVcnPS8d/Wave-Formation.png" alt="QR Wave">
-      <div class="wave-note">Paiement sécurisé · Validation Admin · CashBack garanti</div>
+      <div class="wave5-note">① Cliquez le lien Wave · ② Payez le montant exact · ③ Cliquez "J'ai payé — Notifier l'Admin"</div>
     </div>
   </div>
     <div class="page-hd"><div class="page-title gr">💼 Candidature - Postes TCL</div><div class="ci-rule"></div></div>
@@ -812,18 +808,14 @@ body{font-family:'Segoe UI','Arial',sans-serif;background:var(--dk);color:var(--
         <div class="btn-row"><button class="btn btn-yl btn-full" id="gz-order-btn" onclick="openWaveSecModalGZ()" disabled>🔐 Commander avec Double Sécurité Wave</button></div>
       </div>
     </div>
-    <div class="wave-box" style="background:linear-gradient(145deg,rgba(232,184,40,.07),rgba(3,7,5,.98));border-color:rgba(232,184,40,.3)">
-      <div class="wave-title" style="font-size:.8em;color:var(--yL)">🔐 DOUBLE SÉCURITÉ WAVE — PROTOCOLE v2</div>
-      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0;flex-wrap:wrap;font-size:.65em">
-        <span style="background:rgba(0,144,255,.15);border:1px solid rgba(0,144,255,.3);color:#5ab5ff;padding:4px 10px;border-radius:20px">① Paiement Wave</span>
-        <span style="color:var(--yL)">→</span>
-        <span style="background:rgba(232,184,40,.1);border:1px solid rgba(232,184,40,.3);color:var(--yL);padding:4px 10px;border-radius:20px">② Code Admin</span>
-        <span style="color:var(--gL)">→</span>
-        <span style="background:rgba(37,168,74,.1);border:1px solid rgba(37,168,74,.3);color:var(--gL);padding:4px 10px;border-radius:20px">③ Validé</span>
+    <div class="wave5-box" id="wave5-gz">
+      <div class="wave5-title">🔐 PAIEMENT WAVE — ESPACE GESTIONNAIRE DE ZONE</div>
+      <span class="wave5-amount" id="wave5-gz-amount">--</span>
+      <div class="wave5-subtitle">Lien Wave adapté au panier du client</div>
+      <div class="wave5-btns" id="wave5-gz-btns">
+        <span style="font-size:.74em;color:var(--dim);padding:10px">Ajoutez des produits pour voir le lien Wave dédié.</span>
       </div>
-      <div class="wave-num">+225 07 67 81 43 33</div>
-      <img class="wave-qr" src="https://i.ibb.co/zVcnPS8d/Wave-Formation.png" alt="QR Wave">
-      <div class="wave-note">Paiement sécurisé · Validation Admin · CashBack garanti</div>
+      <div class="wave5-note">① Lien Wave dynamique · ② Code Admin WhatsApp · ③ Validation & CashBack</div>
     </div>
   </div>
 
@@ -876,7 +868,7 @@ body{font-family:'Segoe UI','Arial',sans-serif;background:var(--dk);color:var(--
     <div class="page-hd"><div class="page-title yl">💚 CashBack Solidarité</div><div class="ci-rule"></div></div>
     <div class="stats-grid" id="gz-cb-stats"></div>
     <div class="card"><div class="sec-lbl">Commandes Éligibles</div><div id="gz-cb-orders"></div></div>
-    <div class="wave-box"><div class="wave-title">Reversement Wave Business</div><div class="wave-num">+225 07 67 81 43 33</div><img class="wave-qr" src="https://i.ibb.co/zVcnPS8d/Wave-Formation.png" alt="QR Wave"><div class="wave-note">Portefeuille MESSENKA — CashBack Solidarité</div></div>
+    <div class="wave-box"><div class="wave-title">Reversement Wave Business</div><div class="wave-num">+225 07 67 81 43 33</div><div class="wave-note">Portefeuille MESSENKA — CashBack Solidarité</div></div>
   </div>
 
   <div id="pg-gz-config" class="page">
@@ -1032,18 +1024,14 @@ body{font-family:'Segoe UI','Arial',sans-serif;background:var(--dk);color:var(--
         <div class="btn-row"><button class="btn btn-bl btn-full" id="cr-order-btn" onclick="openWaveSecModalCR()" disabled>🔐 Commander avec Double Sécurité Wave</button></div>
       </div>
     </div>
-    <div class="wave-box" style="background:linear-gradient(145deg,rgba(0,80,200,.09),rgba(3,7,5,.98));border-color:rgba(0,144,255,.35)">
-      <div class="wave-title" style="font-size:.8em">🔐 DOUBLE SÉCURITÉ WAVE — PROTOCOLE v2</div>
-      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0;flex-wrap:wrap;font-size:.65em">
-        <span style="background:rgba(0,144,255,.15);border:1px solid rgba(0,144,255,.3);color:#5ab5ff;padding:4px 10px;border-radius:20px">① Paiement Wave</span>
-        <span style="color:var(--yL)">→</span>
-        <span style="background:rgba(232,184,40,.1);border:1px solid rgba(232,184,40,.3);color:var(--yL);padding:4px 10px;border-radius:20px">② Code Admin</span>
-        <span style="color:var(--gL)">→</span>
-        <span style="background:rgba(37,168,74,.1);border:1px solid rgba(37,168,74,.3);color:var(--gL);padding:4px 10px;border-radius:20px">③ Validé</span>
+    <div class="wave5-box" id="wave5-cr">
+      <div class="wave5-title">🔐 PAIEMENT WAVE — ESPACE COORDINATEUR RÉGIONAL</div>
+      <span class="wave5-amount" id="wave5-cr-amount">--</span>
+      <div class="wave5-subtitle">Lien Wave adapté au panier GZ</div>
+      <div class="wave5-btns" id="wave5-cr-btns">
+        <span style="font-size:.74em;color:var(--dim);padding:10px">Ajoutez des produits pour voir le lien Wave dédié.</span>
       </div>
-      <div class="wave-num">+225 07 67 81 43 33</div>
-      <img class="wave-qr" src="https://i.ibb.co/zVcnPS8d/Wave-Formation.png" alt="QR Wave">
-      <div class="wave-note">Paiement sécurisé · Validation Admin · CashBack garanti</div>
+      <div class="wave5-note">① Lien Wave dynamique · ② Code Admin WhatsApp · ③ Validation & CashBack</div>
     </div>
   </div>
 
@@ -1174,12 +1162,12 @@ body{font-family:'Segoe UI','Arial',sans-serif;background:var(--dk);color:var(--
       <div style="font-size:.62em;color:rgba(90,159,255,.6);letter-spacing:1.5px" id="ws-subtitle">Procédez au paiement Wave</div>
     </div>
     <div class="wave-sec-body">
-      <!-- ÉTAPE 1 : Paiement Wave -->
+      <!-- ÉTAPE 1 : Paiement Wave dynamique — v3.0 -->
       <div id="ws-step1">
         <div class="wave-pay-box">
-          <div style="font-size:.72em;color:#5ab5ff;letter-spacing:1.5px;margin-bottom:6px">📲 PAIEMENT WAVE BUSINESS</div>
-          <img class="wave-pay-qr" src="https://i.ibb.co/zVcnPS8d/Wave-Formation.png" alt="QR Wave">
-          <div class="wave-pay-num">+225 07 67 81 43 33</div>
+          <div style="font-size:.72em;color:#5ab5ff;letter-spacing:1.5px;margin-bottom:8px">💳 PAIEMENT WAVE BUSINESS</div>
+          <!-- Bouton Wave dynamique (remplace QR statique) -->
+          <div id="ws-wave-btn-wrap" style="margin-bottom:10px"></div>
           <div class="wave-pay-amount" id="ws-amount">--</div>
           <div style="font-size:.68em;color:var(--dim);margin-bottom:8px">Montant exact à envoyer</div>
           <div style="font-size:.7em;color:var(--gL);background:rgba(37,168,74,.08);border:1px solid rgba(37,168,74,.2);border-radius:8px;padding:8px;margin-bottom:6px;line-height:1.5">
@@ -1299,16 +1287,182 @@ body{font-family:'Segoe UI','Arial',sans-serif;background:var(--dk);color:var(--
   </div>
 </div>
 
-<div class="version-badge">TCL v2 · Wave 🔐</div>
+<div class="version-badge">TCL v3 · Wave 5 Merchants 🔐</div>
+<style>
+/* ═══════════════════════════════════════════════════
+   WAVE 5 BOUTONS DYNAMIQUES — v3.0 (Portail TCL)
+   Remplace le QR statique par des liens Wave directs
+   ═══════════════════════════════════════════════════ */
+.wave5-box{
+  background:linear-gradient(145deg,rgba(0,80,200,.09),rgba(3,7,5,.98));
+  border:1px solid rgba(0,144,255,.3);
+  border-radius:14px;padding:18px;margin-bottom:13px;text-align:center;
+}
+.wave5-title{font-size:.78em;color:#5ab5ff;letter-spacing:2px;margin-bottom:6px;font-weight:bold}
+.wave5-amount{
+  font-size:1.8em;font-weight:900;color:var(--gL);
+  text-shadow:0 0 20px rgba(37,168,74,.5);
+  margin:8px 0;display:block;
+}
+.wave5-subtitle{font-size:.66em;color:var(--dim);letter-spacing:1px;margin-bottom:14px}
+.wave5-btns{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.ws-wave-btn{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-radius:10px;border:none;
+  cursor:pointer;transition:all .3s;text-decoration:none;
+  font-size:.78em;font-weight:bold;letter-spacing:.5px;
+  background:linear-gradient(135deg,#0050c8,#1a3a8a);
+  color:var(--wh);
+}
+.ws-wave-btn:hover{transform:translateY(-2px);box-shadow:var(--bGlow)}
+.ws-wave-btn.quincaillerie{background:linear-gradient(135deg,#7a4a00,#b86f00)}
+.ws-wave-btn.quincaillerie:hover{box-shadow:0 0 22px rgba(200,120,0,.45)}
+.ws-wave-btn.multi{background:linear-gradient(135deg,#003a00,#0a5a0a);border:1px solid rgba(37,168,74,.4)}
+.ws-wave-btn.multi:hover{box-shadow:var(--gGlow)}
+.ws-wave-tel{font-size:.72em;color:rgba(255,255,255,.6);margin-top:2px;display:block}
+.ws-wave-merchant-label{font-size:.82em;font-weight:800}
+.ws-wave-icon{font-size:1.2em;flex-shrink:0}
+.ws-wave-right{text-align:right}
+.wave5-note{font-size:.62em;color:var(--dim);letter-spacing:1px;margin-top:6px;line-height:1.5}
+/* Quincaillerie — champ produit libre */
+.quinc-product-box{
+  background:rgba(0,0,0,.3);border:1px dashed rgba(200,120,0,.4);
+  border-radius:10px;padding:12px 14px;margin-bottom:10px;text-align:left;
+}
+.quinc-product-box label{font-size:.66em;color:#e8a020;letter-spacing:1px;font-weight:bold;display:block;margin-bottom:6px}
+.quinc-product-input{
+  width:100%;background:#060e06;border:1px solid rgba(200,120,0,.3);
+  border-radius:8px;padding:9px 12px;color:var(--wh);font-size:.86em;
+  margin-bottom:8px;outline:none;transition:border-color .3s;
+}
+.quinc-product-input:focus{border-color:#e8a020}
+.quinc-price-select{
+  width:100%;background:#060e06;border:1px solid rgba(200,120,0,.3);
+  border-radius:8px;padding:9px 12px;color:var(--wh);font-size:.86em;
+  outline:none;appearance:none;cursor:pointer;
+}
+.quinc-price-select option{background:#0c120c}
+</style>
 
 <script>
-/* ====== DOUBLE SÉCURITÉ WAVE — GZ ====== */
+/* ═══════════════════════════════════════════════════════════
+   WAVE 5 MARCHANDS — v3.0
+   Architecture : 1 lien Wave dédié par catégorie de produits
+   Règle : mono-cat → lien dédié | multi-cat → BOUTIQUE défaut
+   ═══════════════════════════════════════════════════════════ */
+var WAVE_MERCHANTS={
+  formation:{
+    label:'VoteConnect Formation',
+    emoji:'📱',
+    tel:'07 67 81 43 33',
+    num:'2250767814333',
+    url:'https://pay.wave.com/m/M_ci_QlW5ke-hYGbA/c/ci/',
+    ids:[1,2,3], /* E-Recharge Orange, MTN, Moov */
+    colorClass:''
+  },
+  restaurant:{
+    label:'VoteConnect Restaurant',
+    emoji:'🍽️',
+    tel:'07 87 10 21 90',
+    num:'2250787102190',
+    url:'https://pay.wave.com/m/M_ci_Glw2Ci3iCSSm/c/ci/',
+    ids:[4,5,6,7,8,9,10,11,12,13], /* Assiettes, Riz, Poulet, Poisson */
+    colorClass:''
+  },
+  courses:{
+    label:'VoteConnect Boutique',
+    emoji:'🛒',
+    tel:'07 07 78 66 14',
+    num:'2250707786614',
+    url:'https://pay.wave.com/m/M_ci_C95mYp2ZuVOE/c/ci/',
+    ids:[14,15,16,17], /* Panier, Kit Hygiène, Eau, Jus */
+    colorClass:'multi'
+  },
+  transport:{
+    label:'VoteConnect Transport',
+    emoji:'🚖',
+    tel:'05 94 21 52 88',
+    num:'2250594215288',
+    url:'https://pay.wave.com/m/M_ci_k4edr8YhS6Ap/c/ci/',
+    ids:[18,19,20], /* VTC, Mini Car, Bus Car */
+    colorClass:''
+  },
+  quincaillerie:{
+    label:'VoteConnect Quincaillerie',
+    emoji:'🔨',
+    tel:'01 41 86 14 84',
+    num:'2250141861484',
+    url:'https://pay.wave.com/m/M_ci_sLb6dVsNX0Bi/c/ci/',
+    ids:[21,22,23,24,25], /* Quincaillerie & BTP */
+    colorClass:'quincaillerie'
+  }
+};
+
+/* Détermine le marchand Wave selon les produits dans le panier */
+function getWaveMerchant(cart){
+  if(!cart||!cart.length) return WAVE_MERCHANTS.courses; /* défaut Boutique */
+  var cats={};
+  cart.forEach(function(item){
+    var id=item.id||item.pid||0;
+    Object.keys(WAVE_MERCHANTS).forEach(function(k){
+      if(WAVE_MERCHANTS[k].ids.indexOf(id)>=0) cats[k]=(cats[k]||0)+1;
+    });
+  });
+  var keys=Object.keys(cats);
+  if(keys.length===1) return WAVE_MERCHANTS[keys[0]]; /* mono-catégorie */
+  return WAVE_MERCHANTS.courses; /* multi-catégories → Boutique défaut */
+}
+
+/* Construit l'URL Wave avec montant pré-rempli */
+function buildWaveUrl(merchant,amount){
+  return merchant.url+'?amount='+Math.round(amount);
+}
+
+/* Génère le HTML d'un bouton Wave */
+function buildWaveBtnHtml(merchant,amount){
+  var url=buildWaveUrl(merchant,amount);
+  return '<a href="'+url+'" target="_blank" class="ws-wave-btn '+(merchant.colorClass||'')+'" style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-radius:11px;text-decoration:none;font-weight:bold;font-size:.82em;letter-spacing:.5px;color:#fff;background:linear-gradient(135deg,#0050c8,#1a3a8a);transition:all .3s;">'
+    +'<div style="display:flex;align-items:center;gap:10px"><span style="font-size:1.4em">'+merchant.emoji+'</span>'
+    +'<div><div style="font-size:.9em;font-weight:800">'+merchant.label+'</div>'
+    +'<div style="font-size:.72em;color:rgba(255,255,255,.6)">+225 '+merchant.tel+'</div></div></div>'
+    +'<div style="text-align:right"><div style="font-size:.82em;color:rgba(255,255,255,.8)">Payer</div>'
+    +'<div style="font-size:1.1em;font-weight:900;color:#a8ffb8">'+new Intl.NumberFormat('fr-FR').format(Math.round(amount))+' F</div></div>'
+    +'</a>';
+}
+
+/* Met à jour les blocs Wave dans les 3 espaces (cli/gz/cr) */
+function updateWave5Box(role,cart,total){
+  var boxId='wave5-'+role+'-btns';
+  var amtId='wave5-'+role+'-amount';
+  var box=document.getElementById(boxId);
+  var amtEl=document.getElementById(amtId);
+  if(!box) return;
+  if(!cart||!cart.length){
+    box.innerHTML='<span style="font-size:.74em;color:var(--dim);padding:10px">Ajoutez des produits pour voir le lien Wave dédié.</span>';
+    if(amtEl) amtEl.textContent='--';
+    return;
+  }
+  var merchant=getWaveMerchant(cart);
+  if(amtEl) amtEl.textContent=new Intl.NumberFormat('fr-FR').format(Math.round(total))+' FCFA';
+  box.innerHTML=buildWaveBtnHtml(merchant,total);
+}
+
+/* Injecte le bouton Wave dans la modal Double Sécurité (ws-step1) */
+function applyWaveToModal(cart,total){
+  var wrap=document.getElementById('ws-wave-btn-wrap');
+  if(!wrap) return;
+  var merchant=getWaveMerchant(cart);
+  wrap.innerHTML=buildWaveBtnHtml(merchant,total);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOUBLE SÉCURITÉ WAVE — GZ ====== */
 function openWaveSecModalGZ(){
   if(!gzGClient){toast('Enregistrez le client d\'abord');return;}
   if(!gzCart.length){toast('Panier vide !');return;}
   var ref='GZ-'+Date.now().toString(36).toUpperCase();
   var sub=gzCart.reduce(function(s,i){return s+i.sub;},0),tot=sub+(gzYangoCost||0);
-  var eligible=tot>5500,cb=Math.round(tot*.025);
+  var eligible=gzCart.some(function(i){var min=i.cbMin||(i.fk&&FM[i.fk]?FM[i.fk].cbMin:5500);return i.sub>=min;}),cb=Math.round(tot*.025);
   var crs=getCoursierInfo('gz'),delai=getGZDelai();
   var adminCode=genAdminCode();
   waveSecOrder={ref:ref,tot:tot,sub:sub,delCost:gzYangoCost||0,gz:'Zone '+USER.com,del:'Zone '+USER.com,eligible:eligible,cb:cb,client:gzGClient.nom,phone:gzGClient.phone,id:gzGClient.num,items:[...gzCart],coursier:crs,delai:delai,gpsD:gzDepCoords?{lat:gzDepCoords.lat,lng:gzDepCoords.lng,n:(document.getElementById('gz-dep-quartier')?document.getElementById('gz-dep-quartier').value:'Départ GZ')}:null,gpsA:gzDestCoords?{lat:gzDestCoords.lat,lng:gzDestCoords.lng,n:(document.getElementById('gz-dest-quartier')?document.getElementById('gz-dest-quartier').value:'Client')}:null,adminCode:adminCode,status:'pending',date:new Date().toISOString().slice(0,16).replace('T',' '),role:'gz',_gzCart:[...gzCart],_gzYangoCost:gzYangoCost||0,_gzGClient:gzGClient};
@@ -1318,6 +1472,7 @@ function openWaveSecModalGZ(){
   document.getElementById('ws-amount').textContent=fmt(tot);
   document.getElementById('ws-ref-pay').textContent=ref;
   document.getElementById('ws-wait-ref').textContent=ref;
+  applyWaveToModal(gzCart,tot); /* v3.0 : bouton Wave dynamique */
   wsShowStep(1);
   document.getElementById('wave-sec-overlay').classList.add('on');
 }
@@ -1328,7 +1483,7 @@ function openWaveSecModalCR(){
   if(!crCart.length){toast('Panier vide !');return;}
   var ref='CR-'+Date.now().toString(36).toUpperCase();
   var sub=crCart.reduce(function(s,i){return s+i.sub;},0),tot=sub+(crYangoCost||0);
-  var eligible=tot>5500,cb=Math.round(tot*.025);
+  var eligible=crCart.some(function(i){var min=i.cbMin||(i.fk&&FM[i.fk]?FM[i.fk].cbMin:5500);return i.sub>=min;}),cb=Math.round(tot*.025);
   var crs=getCoursierInfo('cr'),delai=getCRDelai();
   var adminCode=genAdminCode();
   waveSecOrder={ref:ref,tot:tot,sub:sub,delCost:crYangoCost||0,gz:'Région '+USER.region,del:'Zone '+crGClient.zone,eligible:eligible,cb:cb,client:crGClient.nom,phone:crGClient.tel,id:crGClient.dealer,items:[...crCart],coursier:crs,delai:delai,gpsD:crDepCoords?{lat:crDepCoords.lat,lng:crDepCoords.lng,n:(document.getElementById('cr-y-dep')?document.getElementById('cr-y-dep').value:'Départ CR')}:null,gpsA:crDestCoords?{lat:crDestCoords.lat,lng:crDestCoords.lng,n:(document.getElementById('cr-y-dest')?document.getElementById('cr-y-dest').value:'GZ Dest.')}:null,adminCode:adminCode,status:'pending',date:new Date().toISOString().slice(0,16).replace('T',' '),role:'cr',_crCart:[...crCart],_crYangoCost:crYangoCost||0,_crGClient:crGClient};
@@ -1338,6 +1493,7 @@ function openWaveSecModalCR(){
   document.getElementById('ws-amount').textContent=fmt(tot);
   document.getElementById('ws-ref-pay').textContent=ref;
   document.getElementById('ws-wait-ref').textContent=ref;
+  applyWaveToModal(crCart,tot); /* v3.0 : bouton Wave dynamique */
   wsShowStep(1);
   document.getElementById('wave-sec-overlay').classList.add('on');
 }
@@ -1409,7 +1565,7 @@ function openWaveSecModal(){
   // Prépare la commande complète
   var ref='CMD-'+Date.now().toString(36).toUpperCase();
   var sub=cliCart.reduce(function(s,i){return s+i.sub;},0),tot=sub+cliDelCost;
-  var eligible=cliCart.some(function(i){return i.price>=FM[i.fk].cbMin;}),cb=Math.round(sub*.025);
+  var eligible=cliCart.some(function(i){var min=i.cbMin||(i.fk&&FM[i.fk]?FM[i.fk].cbMin:5500);return i.sub>=min;}),cb=Math.round(sub*.025);
   var gz=cliGZSel?cliGZSel.n+' ('+cliGZSel.z+')':'À assigner';
   var del=cliDelMode==='ptn'&&cliPtnSel?'CashPoint: '+cliPtnSel.nom:cliDelMode==='dom'?'Domicile: '+(document.getElementById('adr-dom').value||'À préciser'):cliDelMode==='eko'?'École: '+(document.getElementById('adr-eko').value||'À préciser'):'Service: '+(document.getElementById('adr-srv').value||'À préciser');
   var crs=getCoursierInfo('cli');
@@ -1424,6 +1580,7 @@ function openWaveSecModal(){
   document.getElementById('ws-amount').textContent=fmt(tot);
   document.getElementById('ws-ref-pay').textContent=ref;
   document.getElementById('ws-wait-ref').textContent=ref;
+  applyWaveToModal(cliCart,tot); /* v3.0 : bouton Wave dynamique */
   wsShowStep(1);
   document.getElementById('wave-sec-overlay').classList.add('on');
 }
@@ -1436,7 +1593,7 @@ function wsShowStep(n){
   var d1=document.getElementById('ws-d1'),d2=document.getElementById('ws-d2'),d3=document.getElementById('ws-d3');
   var l1=document.getElementById('ws-l1'),l2=document.getElementById('ws-l2');
   var titles=['','🔐 PAIEMENT WAVE — ÉTAPE 1/3','⏳ EN ATTENTE ADMIN — ÉTAPE 2/3','🎉 COMMANDE VALIDÉE — ÉTAPE 3/3'];
-  var subs=['','Scannez le QR ou envoyez au numéro Wave','L\'Admin vérifie et envoie votre code WhatsApp','Paiement + Validation Admin confirmés'];
+  var subs=['','Cliquez le lien Wave dédié · Montant pré-rempli automatiquement','L\'Admin vérifie et envoie votre code WhatsApp','Paiement + Validation Admin confirmés'];
   document.getElementById('ws-title').textContent=titles[n];
   document.getElementById('ws-subtitle').textContent=subs[n];
   if(n===1){d1.className='ws-dot active';d2.className='ws-dot wait';d3.className='ws-dot wait';l1.classList.remove('done');l2.classList.remove('done');}
@@ -1521,16 +1678,6 @@ function validateWaveCode(){
     var allOrders=ls('tcl_all_orders',[]);
     allOrders.unshift(waveSecOrder);
     lss('tcl_all_orders',allOrders);
-    // ── ENVOI GSHEETS — Paiement validé ──
-    sendToGSheets('updateTransaction', {
-      ref: waveSecOrder.ref,
-      statut: 'paye',
-      code_confirmation: waveSecOrder.adminCode,
-      montant_fcfa: waveSecOrder.tot || 0,
-      cashback_croire: waveSecOrder.eligible ? (waveSecOrder.cb || 0) : 0,
-      misikah_credite: waveSecOrder.eligible ? Math.round((waveSecOrder.cb||0)/10000*10000)/10000 : 0,
-      validated_at: new Date().toISOString()
-    });
     // Vide le panier
     lastOrder={...waveSecOrder,suggestion:lastSuggestion};
     cliCart=[];updCliCart();
@@ -1692,43 +1839,6 @@ function adminRejectOrder(idx){
 /* ====== ADMIN PANEL END ====== */
 var WA_NUM='2250767560908';
 
-/* ════════════════════════════════════════════════════
-   CONNEXION GOOGLE SHEETS CF-DB v2.0
-   VoteConnect SARL × ChallengeFinancier™
-   ════════════════════════════════════════════════════ */
-var GS_URL='https://script.google.com/macros/s/AKfycbznz5aBNSS5FDj6kvEtIcr11UQ-JptlQWaTFgzsW4XvbDO3z57qEsiiZ0c3H6u0-pLG/exec';
-
-function sendToGSheets(action, data) {
-  if (!GS_URL) return;
-  var payload = Object.assign({ action: action, source: 'TCL_PORTAIL_V3', timestamp: new Date().toISOString() }, data);
-  fetch(GS_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  }).then(function(r) { return r.json(); })
-    .then(function(res) { console.log('[GSheets TCL] ' + action + ' →', res); })
-    .catch(function(err) {
-      console.warn('[GSheets TCL] Échec ' + action + ' — sauvegarde locale conservée', err);
-      // Fallback : mise en file d'attente locale
-      var queue = JSON.parse(localStorage.getItem('tcl_gs_queue') || '[]');
-      queue.push(payload);
-      localStorage.setItem('tcl_gs_queue', JSON.stringify(queue));
-    });
-}
-
-// Rejoue la file d'attente au chargement (données en attente d'envoi)
-function flushGSQueue() {
-  var queue = JSON.parse(localStorage.getItem('tcl_gs_queue') || '[]');
-  if (!queue.length) return;
-  var remaining = [];
-  queue.forEach(function(payload) {
-    fetch(GS_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-      .catch(function() { remaining.push(payload); });
-  });
-  setTimeout(function() { localStorage.setItem('tcl_gs_queue', JSON.stringify(remaining)); }, 3000);
-}
-setTimeout(flushGSQueue, 2000);
-
 var PRODS=[
   {id:1,n:'E-Recharge Orange',e:'📱',src:'https://i.ibb.co/s9zP775m/Orange.png',fmls:['s']},
   {id:2,n:'E-Recharge MTN',e:'📱',src:'https://i.ibb.co/zTXhLDxR/MTN.png',fmls:['s']},
@@ -1749,7 +1859,13 @@ var PRODS=[
   {id:17,n:'Pack Jus de Fruits',e:'🥤',src:'https://i.ibb.co/LXYx7vHr/PackJus.png',fmls:['s','f','v']},
   {id:18,n:'Titre Transport VTC',e:'🚖',src:'https://i.ibb.co/q34PkKdZ/VTC.png',fmls:['s','f','v']},
   {id:19,n:'Titre Transport Mini Car',e:'🚐',src:'https://i.ibb.co/bg27tFJR/MiniCar.png',fmls:['s','f']},
-  {id:20,n:'Titre Transport Bus Car',e:'🚌',src:'https://i.ibb.co/B2j1Gbnm/BusCar.png',fmls:['s','f']}
+  {id:20,n:'Titre Transport Bus Car',e:'🚌',src:'https://i.ibb.co/B2j1Gbnm/BusCar.png',fmls:['s','f']},
+  /* === CATÉGORIE 5 : QUINCAILLERIE & BTP — v3.1 (5 sous-catégories) === */
+  {id:21,n:'Maçonnerie',e:'🧱',src:'https://i.ibb.co/Kz2FZtrB/Ma-onnerie.png',fmls:['s','f','v'],cat:'quinc',catLabel:'Maçonnerie'},
+  {id:22,n:'Menuiserie',e:'🪚',src:'https://i.ibb.co/fzn9Qzhs/Menuiserie.png',fmls:['s','f','v'],cat:'quinc',catLabel:'Menuiserie'},
+  {id:23,n:'Plomberie', e:'🔧',src:'https://i.ibb.co/tMb6SPNY/Plomberie.png', fmls:['s','f','v'],cat:'quinc',catLabel:'Plomberie'},
+  {id:24,n:'Electricité',e:'⚡',src:'https://i.ibb.co/VcCWDPMT/Electricit.png',fmls:['s','f','v'],cat:'quinc',catLabel:'Électricité'},
+  {id:25,n:'Peinture',  e:'🎨',src:'https://i.ibb.co/SXzTnBc0/Peinture.png',  fmls:['s','f','v'],cat:'quinc',catLabel:'Peinture'}
 ];
 var FM={
   s:{l:'Standard',p:[1500,2500,3500,4500,5500,7500],pE:[500,1000,1500,2500,3500,4500,5500,7500],cbMin:5500},
@@ -1929,26 +2045,10 @@ function doLogout(){
 }
 function saveProfile(){
   if(!USER||USER.role!=='cli')return;
-  var nom=document.getElementById('p-name').value;
-  var phone=document.getElementById('p-phone').value;
-  var village=document.getElementById('p-village').value;
-  var parrain=document.getElementById('p-parrain').value;
-  lss('tcl_pname_'+USER.id,nom);
-  lss('tcl_pphone_'+USER.id,phone);
-  lss('tcl_pvillage_'+USER.id,village);
-  lss('tcl_pparrain_'+USER.id,parrain);
-  // ── ENVOI GSHEETS — Profil client ──
-  if(nom && phone) {
-    sendToGSheets('updateUser', {
-      tcl_id: USER.id,
-      nom_complet: nom,
-      phone: phone,
-      quartier_village: village,
-      parrain_tcl: parrain,
-      role: 'client_tcl',
-      statut: 'active'
-    });
-  }
+  lss('tcl_pname_'+USER.id,document.getElementById('p-name').value);
+  lss('tcl_pphone_'+USER.id,document.getElementById('p-phone').value);
+  lss('tcl_pvillage_'+USER.id,document.getElementById('p-village').value);
+  lss('tcl_pparrain_'+USER.id,document.getElementById('p-parrain').value);
 }
 
 /* ====== NAV / LAUNCH ====== */
@@ -2293,9 +2393,34 @@ function buildProds(gridId,qty){
   var g=document.getElementById(gridId);if(!g)return;g.innerHTML='';
   PRODS.forEach(function(p){
     qty[p.id]=1;
+    var d=document.createElement('div');d.className='pc';
+
+    /* ── Quincaillerie v3.0 : champ produit libre + menu prix admin ── */
+    if(p.cat==='quinc'){
+      /* Prix unitaires par défaut (modifiables par l'administrateur) */
+      var defPrices=[1500,2500,3500,5000,7500,10000,15000,20000,25000,30000,40000,50000,75000,100000];
+      var opts=defPrices.map(function(pr){return '<option value="'+pr+'">'+fmt(pr)+'</option>';}).join('');
+      d.innerHTML='<img class="pc-img" src="'+p.src+'" alt="'+p.n+'" loading="eager" onerror="this.onerror=null;this.style.display=\'none\'" style="height:120px;object-fit:cover">'
+        +'<div style="background:rgba(200,120,0,.08);border-bottom:1px solid rgba(200,120,0,.25);padding:6px 10px;display:flex;align-items:center;gap:6px"><span style="font-size:1.2em">'+p.e+'</span><span style="font-size:.7em;font-weight:bold;color:#e8a020;letter-spacing:.5px">QUINC. &amp; BTP — '+p.catLabel+'</span></div>'
+        +'<div class="pc-body"><div class="pc-num">N°'+String(p.id).padStart(2,'0')+'</div>'
+        +'<div class="quinc-product-box">'
+        +'<label>Désignation du produit *</label>'
+        +'<input type="text" class="quinc-product-input" id="qn-'+gridId+'-'+p.id+'" placeholder="Ex: Ciment CPA 50kg, Fer 8mm..." oninput="updQuincName(\''+gridId+'\','+p.id+')">'
+        +'<label style="margin-top:4px">Prix unitaire (FCFA)</label>'
+        +'<select class="quinc-price-select" id="ps-'+gridId+'-'+p.id+'" onchange="updSub(\''+gridId+'\','+p.id+')">'
+        +opts+'</select></div>'
+        +'<div class="add-zone"><div><div style="font-size:.58em;color:var(--dim)">Qté</div>'
+        +'<div class="qty-ctrl"><button class="qty-btn" onclick="chgQty(\''+gridId+'\','+p.id+',-1)">-</button>'
+        +'<div class="qty-val" id="qv-'+gridId+'-'+p.id+'">1</div>'
+        +'<button class="qty-btn" onclick="chgQty(\''+gridId+'\','+p.id+',1)">+</button></div></div>'
+        +'<div class="sub-box"><span class="sub-lbl">Sous-total</span><span class="sub-amt" id="sub-'+gridId+'-'+p.id+'">'+fmt(defPrices[0])+'</span></div></div>'
+        +'<button class="big-add" id="ba-'+gridId+'-'+p.id+'" onclick="addQuincToCart(\''+gridId+'\','+p.id+')" style="background:linear-gradient(135deg,#7a4a00,#b86f00)">+ Ajouter</button></div>';
+      g.appendChild(d);return;
+    }
+
+    /* ── Produits standards ── */
     var ip=(p.id<=3)?FM.s.pE:FM.s.p;
     var opts=ip.map(function(pr){return '<option value="'+pr+'">'+fmt(pr)+'</option>';}).join('');
-    var d=document.createElement('div');d.className='pc';
     d.innerHTML='<img class="pc-img" src="'+p.src+'" alt="'+p.n+'" loading="eager" onerror="this.onerror=null;this.style.display=\'none\'">'
       +'<div class="pc-body"><div class="pc-num">N°'+String(p.id).padStart(2,'0')+'</div><div class="pc-name">'+p.n+'</div>'
       +'<div class="ftabs-sm" id="ft-'+gridId+'-'+p.id+'">'
@@ -2312,6 +2437,30 @@ function buildProds(gridId,qty){
       +'<button class="big-add" id="ba-'+gridId+'-'+p.id+'" onclick="addToCart(\''+gridId+'\','+p.id+')">+ Ajouter</button></div>';
     g.appendChild(d);
   });
+}
+
+/* Mise à jour du nom Quincaillerie dans le produit affiché */
+function updQuincName(gridId,pid){
+  var inp=document.getElementById('qn-'+gridId+'-'+pid);
+  var p=PRODS.find(function(x){return x.id===pid;});
+  if(p&&inp) p._nomLibre=inp.value.trim()||p.n;
+}
+
+/* Ajout au panier Quincaillerie (nom libre) */
+function addQuincToCart(grid,pid){
+  var p=PRODS.find(function(x){return x.id===pid;});if(!p)return;
+  var nomEl=document.getElementById('qn-'+grid+'-'+pid);
+  var nom=(nomEl&&nomEl.value.trim())||'Produit Quincaillerie';
+  var q=getQty(grid),pr=getPrice(grid,pid),qt=q[pid]||1;
+  if(!nom||nom.length<2){toast('Saisissez le nom du produit Quincaillerie');if(nomEl)nomEl.focus();return;}
+  var item={uid:Date.now()+'_'+Math.floor(Math.random()*9999),pid:pid,id:pid,name:p.e+' '+nom,e:p.e,img:p.src,formula:p.catLabel||'Quincaillerie',fk:'s',price:pr,qty:qt,sub:pr*qt,cat:'quinc',cbMin:30000};
+  if(grid==='prods-grid'){cliCart.push(item);updCliCart();}
+  else if(grid==='gz-prods-grid'){gzCart.push(item);updGZCart();}
+  else{crCart.push(item);updCRCart();}
+  var ba=document.getElementById('ba-'+grid+'-'+pid);ba.textContent='✓ Ajouté !';ba.classList.add('added');
+  if(nomEl){nomEl.value='';}
+  setTimeout(function(){ba.textContent='+ Ajouter';ba.classList.remove('added');},1800);
+  toast(nom+' ajouté (Quincaillerie) !');
 }
 function filterFormule(fk,el){
   cliFormule=fk;
@@ -2346,7 +2495,7 @@ function updSub(grid,pid){
 function addToCart(grid,pid){
   var p=PRODS.find(function(x){return x.id===pid;});if(!p)return;
   var q=getQty(grid),fk=getFk(grid,pid),pr=getPrice(grid,pid),qt=q[pid]||1;
-  var item={uid:Date.now()+'_'+Math.floor(Math.random()*9999),pid:pid,name:p.n,e:p.e,img:p.src,formula:FM[fk].l,fk:fk,price:pr,qty:qt,sub:pr*qt};
+  var item={uid:Date.now()+'_'+Math.floor(Math.random()*9999),pid:pid,id:pid,name:p.n,e:p.e,img:p.src,formula:FM[fk].l,fk:fk,price:pr,qty:qt,sub:pr*qt};
   if(grid==='prods-grid'){cliCart.push(item);updCliCart();}
   else if(grid==='gz-prods-grid'){gzCart.push(item);updGZCart();}
   else{crCart.push(item);updCRCart();}
@@ -2364,6 +2513,9 @@ function updCliCart(){
   var ob=document.getElementById('order-btn');if(ob)ob.disabled=!cliCart.length;
   updateSteps();
   var fob=document.getElementById('float-order-btn');(cnt>0&&ROLE==='cli')?fob.classList.add('visible'):fob.classList.remove('visible');
+  /* v3.0 : mise à jour du bloc Wave 5 marchands */
+  var sub=cliCart.reduce(function(s,i){return s+i.sub;},0);
+  updateWave5Box('cli',cliCart,sub+cliDelCost);
 }
 function updateSteps(){
   var hasCart=cliCart.length>0;
@@ -2378,7 +2530,8 @@ function rmCliCart(uid){cliCart=cliCart.filter(function(i){return i.uid!=uid;});
 function renderCliCart(){
   var list=document.getElementById('cart-list'),tw=document.getElementById('cart-total-wrap');if(!list)return;
   var sub=cliCart.reduce(function(s,i){return s+i.sub;},0),tot=sub+cliDelCost;
-  var eligible=cliCart.some(function(i){return i.price>=FM[i.fk].cbMin;}),cb=Math.round(sub*.025);
+  /* v3.1 : eligible si item.sub >= cbMin propre (quinc=30000) ou FM[fk].cbMin standard */
+  var eligible=cliCart.some(function(i){var min=i.cbMin||(i.fk&&FM[i.fk]?FM[i.fk].cbMin:5500);return i.sub>=min;}),cb=Math.round(sub*.025);
   if(!cliCart.length){list.innerHTML='<div class="cart-empty">Panier vide — Allez au catalogue</div>';if(tw)tw.style.display='none';return;}
   list.innerHTML=cliCart.map(function(it){return '<div class="cart-item"><img class="ci-img" src="'+it.img+'" onerror="this.style.display=\'none\'" alt=""><div class="ci-info"><div class="ci-name">'+it.name+'</div><div class="ci-det">'+it.formula+' × '+it.qty+'</div></div><div class="ci-price">'+fmt(it.sub)+'</div><button class="ci-rm" onclick="rmCliCart(\''+it.uid+'\')">✕</button></div>';}).join('');
   if(tw){
@@ -2417,7 +2570,7 @@ function openOrderModal(){
   if(!cliCart.length){toast('Panier vide !');return;}
   var ref='CMD-'+Date.now().toString(36).toUpperCase();
   var sub=cliCart.reduce(function(s,i){return s+i.sub;},0),tot=sub+cliDelCost;
-  var eligible=cliCart.some(function(i){return i.price>=FM[i.fk].cbMin;}),cb=Math.round(sub*.025);
+  var eligible=cliCart.some(function(i){var min=i.cbMin||(i.fk&&FM[i.fk]?FM[i.fk].cbMin:5500);return i.sub>=min;}),cb=Math.round(sub*.025);
   var gz=cliGZSel?cliGZSel.n+' ('+cliGZSel.z+')':'À assigner';
   var del=cliDelMode==='ptn'&&cliPtnSel?'CashPoint: '+cliPtnSel.nom:cliDelMode==='dom'?'Domicile: '+(document.getElementById('adr-dom').value||'À préciser'):cliDelMode==='eko'?'École: '+(document.getElementById('adr-eko').value||'À préciser'):'Service: '+(document.getElementById('adr-srv').value||'À préciser');
   var crs=getCoursierInfo('cli');
@@ -2436,19 +2589,6 @@ function confirmClientOrder(){
   document.getElementById('pn-ico').textContent='✅';document.getElementById('pn-title').textContent='Commande Envoyée !';document.getElementById('pn-ref').textContent=lastOrder.ref;
   var pncb=document.getElementById('pn-cb');if(lastOrder.eligible){pncb.style.display='block';pncb.textContent='💚 CashBack: '+fmt(lastOrder.cb)+' seront reversés !';}else{pncb.style.display='none';}
   document.getElementById('pn-overlay').classList.add('on');toast('Commande confirmée ! '+lastOrder.ref);
-  // ── ENVOI GSHEETS ──
-  sendToGSheets('newTransaction', {
-    ref: lastOrder.ref,
-    client: lastOrder.client,
-    client_phone: lastOrder.phone || '',
-    gz: lastOrder.gz || '',
-    produits: JSON.stringify(lastOrder.items || []),
-    montant_fcfa: lastOrder.tot || 0,
-    cashback_croire: lastOrder.eligible ? (lastOrder.cb || 0) : 0,
-    livraison: lastOrder.del || '',
-    statut: 'en_attente',
-    zone: lastOrder.zone || ''
-  });
 }
 function buildWAMsg(order){
   var lines=['🏛️ *COMMANDE TCL 2026 — Réf: '+order.ref+'*',''];
@@ -2491,8 +2631,7 @@ function openBonModal(ref,order){
   html+='<div class="tot-row grand"><span>TOTAL À PAYER</span><span>'+fmt(tot)+'</span></div></div>';
   if(order.eligible)html+='<div class="cb-box">💚 <b>CashBack Solidarité:</b> '+fmt(order.cb||0)+' FCFA reversés à la communauté TCL</div>';
   if(order.suggestion)html+='<div style="background:#e8f5e9;border:1px solid #14722e;border-radius:8px;padding:8px;margin-bottom:12px;font-size:11px;color:#083a14">💡 <b>Suggestion:</b> '+order.suggestion.name+' — '+order.suggestion.why+'</div>';
-  html+='<div class="qr-section"><img class="qr-img" src="https://i.ibb.co/zVcnPS8d/Wave-Formation.png" alt="QR Wave"><div class="qr-info"><b>📲 Paiement Wave Business</b><div class="qr-num">+225 07 67 81 43 33</div><div style="font-size:11px;margin-top:4px;color:#555">Scanner pour payer</div></div></div>';
-  html+='<div class="footer"><b>Programme La Révolution par la Base</b><br>Email: admin_tcl@challengefinancier.com<br>Wave +225 0767814333 | WhatsApp +225 0767560908<br><b>VoteConnect sarl — Écosystème TCL © 2026</b></div></body></html>';
+  html+='<div class="doc-ft"><p>Programme La Révolution par la Base<br>Email: admin_tcl@challengefinancier.com<br>Wave +225 0767814333 | WhatsApp +225 0767560908<br><b>VoteConnect sarl — Écosystème TCL © 2026</b></p><p style="font-size:11px;color:#777;margin-top:6px">Payez via Wave Business au <b>+225 07 67 81 43 33</b> — Montant exact : <b>'+fmt(tot)+'</b></p></div></body></html>';
   document.getElementById('bon-frame-ref').textContent=ref;
   document.getElementById('bon-iframe').srcdoc=html;
   document.getElementById('bon-frame-wrap').classList.add('on');
@@ -2531,11 +2670,13 @@ function saveGZClient(){
 function updGZCart(){
   var sub=gzCart.reduce(function(s,i){return s+i.sub;},0),tot=sub+(gzYangoCost||0),cnt=gzCart.reduce(function(s,i){return s+i.qty;},0);
   var list=document.getElementById('gz-cart-list'),tw=document.getElementById('gz-cart-total-wrap');if(!list)return;
-  if(!gzCart.length){list.innerHTML='<div class="cart-empty">Panier vide</div>';if(tw)tw.style.display='none';var ob=document.getElementById('gz-order-btn');if(ob)ob.disabled=true;document.getElementById('float-order-btn').classList.remove('visible');document.getElementById('fo-cnt').textContent='0';return;}
+  if(!gzCart.length){list.innerHTML='<div class="cart-empty">Panier vide</div>';if(tw)tw.style.display='none';var ob=document.getElementById('gz-order-btn');if(ob)ob.disabled=true;document.getElementById('float-order-btn').classList.remove('visible');document.getElementById('fo-cnt').textContent='0';updateWave5Box('gz',[],0);return;}
   list.innerHTML=gzCart.map(function(it){return '<div class="cart-item"><img class="ci-img" src="'+it.img+'" onerror="this.style.display=\'none\'" alt=""><div class="ci-info"><div class="ci-name">'+it.name+'</div><div class="ci-det">'+it.formula+' ×'+it.qty+'</div></div><div class="ci-price">'+fmt(it.sub)+'</div><button class="ci-rm" onclick="rmGZCart(\''+it.uid+'\')">✕</button></div>';}).join('');
   if(tw){tw.style.display='block';document.getElementById('gz-cart-subtotal').textContent=fmt(sub);var dr=document.getElementById('gz-del-row');if(gzYangoCost>0){dr.style.display='flex';document.getElementById('gz-del-amt').textContent=fmt(gzYangoCost);}else{dr.style.display='none';}document.getElementById('gz-cart-total').textContent=fmt(tot);}
   var ob=document.getElementById('gz-order-btn');if(ob)ob.disabled=false;
   document.getElementById('fo-cnt').textContent=cnt;document.getElementById('float-order-btn').classList.add('visible');
+  /* v3.0 : mise à jour Wave 5 marchands */
+  updateWave5Box('gz',gzCart,tot);
 }
 function rmGZCart(uid){gzCart=gzCart.filter(function(i){return i.uid!=uid;});updGZCart();}
 function confirmGZOrder(){
@@ -2603,13 +2744,6 @@ function chgOrderStatus(role,ref,status){
   if(role==='gz'){lss('tcl_gz_orders',gzOrders);renderGZOrders();renderGZDash();renderGZCashback();}
   else{lss('tcl_cr_orders',crOrders);renderCROrders();renderCRDash();renderCRCashback();}
   toast('Statut mis à jour: '+status);
-  // ── ENVOI GSHEETS — Mise à jour statut ──
-  sendToGSheets('updateTransaction', {
-    ref: ref,
-    statut: status,
-    zone_coadmin: role === 'gz' ? (gzCfg.zone || '') : (crCfg.zone || ''),
-    updated_at: new Date().toISOString()
-  });
 }
 function openWAOrder(role,ref){
   var orders=role==='gz'?gzOrders:crOrders;
@@ -2710,11 +2844,13 @@ function saveCRClient(){
 function updCRCart(){
   var sub=crCart.reduce(function(s,i){return s+i.sub;},0),tot=sub+(crYangoCost||0),cnt=crCart.reduce(function(s,i){return s+i.qty;},0);
   var list=document.getElementById('cr-cart-list'),tw=document.getElementById('cr-cart-total-wrap');if(!list)return;
-  if(!crCart.length){list.innerHTML='<div class="cart-empty">Panier vide</div>';if(tw)tw.style.display='none';var ob=document.getElementById('cr-order-btn');if(ob)ob.disabled=true;document.getElementById('float-order-btn').classList.remove('visible');document.getElementById('fo-cnt').textContent='0';return;}
+  if(!crCart.length){list.innerHTML='<div class="cart-empty">Panier vide</div>';if(tw)tw.style.display='none';var ob=document.getElementById('cr-order-btn');if(ob)ob.disabled=true;document.getElementById('float-order-btn').classList.remove('visible');document.getElementById('fo-cnt').textContent='0';updateWave5Box('cr',[],0);return;}
   list.innerHTML=crCart.map(function(it){return '<div class="cart-item"><img class="ci-img" src="'+it.img+'" onerror="this.style.display=\'none\'" alt=""><div class="ci-info"><div class="ci-name">'+it.name+'</div><div class="ci-det">'+it.formula+' ×'+it.qty+'</div></div><div class="ci-price">'+fmt(it.sub)+'</div><button class="ci-rm" onclick="rmCRCart(\''+it.uid+'\')">✕</button></div>';}).join('');
   if(tw){tw.style.display='block';document.getElementById('cr-cart-subtotal').textContent=fmt(sub);var dr=document.getElementById('cr-del-row');if(crYangoCost>0){dr.style.display='flex';document.getElementById('cr-del-amt').textContent=fmt(crYangoCost);}else{dr.style.display='none';}document.getElementById('cr-cart-total').textContent=fmt(tot);var cbok=document.getElementById('cr-cb-ok');if(tot>5500){cbok.style.display='block';document.getElementById('cr-cb-amt-disp').textContent=fmt(Math.round(tot*.025));}else{cbok.style.display='none';}}
   var ob=document.getElementById('cr-order-btn');if(ob)ob.disabled=false;
   document.getElementById('fo-cnt').textContent=cnt;document.getElementById('float-order-btn').classList.add('visible');
+  /* v3.0 : mise à jour Wave 5 marchands */
+  updateWave5Box('cr',crCart,tot);
 }
 function rmCRCart(uid){crCart=crCart.filter(function(i){return i.uid!=uid;});updCRCart();}
 function confirmCROrder(){
