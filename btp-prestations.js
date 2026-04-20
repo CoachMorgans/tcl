@@ -8,23 +8,23 @@
 
 /* ── DONNÉES : 10 corps de métier BTP ── */
 var ARTISANS_BTP = [
-  { id:'btp01', ico:'🧱', metier:'Maçon', desc:'Construction, crépissage, pose de parpaings, chape', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp02', ico:'🪚', metier:'Menuisier', desc:'Portes, fenêtres, placards, charpente bois', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp03', ico:'🔧', metier:'Plombier', desc:'Installation sanitaire, tuyauterie, WC, douche', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp04', ico:'⚡', metier:'Électricien', desc:'Installation électrique, tableau, prises, éclairage', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp05', ico:'🎨', metier:'Peintre', desc:'Peinture intérieure/extérieure, enduit, imperméabilisation', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp06', ico:'🏗️', metier:'Ferrailleur', desc:'Armature béton, dalle, poteau, longrine', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp07', ico:'🪟', metier:'Vitrier / Aluminier', desc:'Vitrage, menuiserie aluminium, vérandas, baies coulissantes', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp08', ico:'🏠', metier:'Staffeur', desc:'Staff décoratif, faux plafond, corniche, moulure', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp09', ico:'🪵', metier:'Carreleur', desc:'Pose carrelage sol/mur, faïence, mosaïque', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' },
-  { id:'btp10', ico:'🏡', metier:'Agent Immobilier', desc:'Vente, location, estimation, gestion de biens', wave:'M_ci_sLb6dVzNX0Bi', tel:'01 41 86 14 84' }
+  { id:'btp01', ico:'🧱', metier:'Maçon',          img:'https://i.ibb.co/Jw97QqCH/Ma-on.png',              desc:'Construction, crépissage, pose de parpaings, chape', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp02', ico:'🪚', metier:'Menuisier',       img:'https://i.ibb.co/HD4tFNjz/Menuisier.png',           desc:'Portes, fenêtres, placards, charpente bois', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp03', ico:'🔧', metier:'Plombier',        img:'https://i.ibb.co/hRwPFj2t/Plombier.png',            desc:'Installation sanitaire, tuyauterie, WC, douche', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp04', ico:'⚡', metier:'Électricien',     img:'https://i.ibb.co/d4N8y434/Electricien.png',         desc:'Installation électrique, tableau, prises, éclairage', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp05', ico:'🎨', metier:'Peintre',         img:'https://i.ibb.co/gMhTkcbs/Peintre.png',             desc:'Peinture intérieure/extérieure, enduit, imperméabilisation', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp06', ico:'🏗️', metier:'Ferronnier',      img:'https://i.ibb.co/N62Xj5T1/Feronnier.png',           desc:'Portail, grillage, structure métallique, soudure', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp07', ico:'🪟', metier:'Vitrier',         img:'https://i.ibb.co/SDj7rmBf/Vitrier.png',             desc:'Vitrage, menuiserie aluminium, vérandas, baies coulissantes', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp08', ico:'🏠', metier:'Staffeur',        img:'https://i.ibb.co/wZB2qBcN/Staffeur.png',            desc:'Staff décoratif, faux plafond, corniche, moulure', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp09', ico:'🪵', metier:'Carreleur',       img:'https://i.ibb.co/wNYSdb6g/Carreleur.png',           desc:'Pose carrelage sol/mur, faïence, mosaïque', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' },
+  { id:'btp10', ico:'🏡', metier:'Agent Immobilier',img:'https://i.ibb.co/RpM0RvJM/Agent-Immobilier.png',    desc:'Vente, location, estimation, gestion de biens', wave:'M_ci_sLb6dVsNX0Bi', tel:'01 41 86 14 84' }
 ];
 
 var WAVE_QUINC = {
   label: 'VoteConnect Quincaillerie',
   tel: '01 41 86 14 84',
   num: '2250141861484',
-  url: 'https://pay.wave.com/m/M_ci_sLb6dVzNX0Bi/c/ci/'
+  url: 'https://pay.wave.com/m/M_ci_sLb6dVsNX0Bi/c/ci/'
 };
 var WA_BTP = '2250767560908';
 
@@ -182,7 +182,7 @@ function buildBTPGrid() {
   if (!grid) return;
   grid.innerHTML = ARTISANS_BTP.map(function(a) {
     return '<div class="btp-card" id="btp-c-' + a.id + '" onclick="selMetier(\'' + a.id + '\')">'
-      + '<span class="btp-ico">' + a.ico + '</span>'
+      + '<img src="' + a.img + '" alt="' + a.metier + '" style="width:56px;height:56px;border-radius:10px;object-fit:cover;margin:0 auto 6px;display:block;border:1px solid rgba(200,120,0,.3)">'
       + '<div class="btp-metier">' + a.metier + '</div>'
       + '<div class="btp-desc">' + a.desc + '</div>'
       + '</div>';
@@ -190,7 +190,7 @@ function buildBTPGrid() {
   if (pageGrid) {
     pageGrid.innerHTML = ARTISANS_BTP.map(function(a) {
       return '<div class="btp-page-card" onclick="openBTPFor(\'' + a.id + '\')">'
-        + '<span class="btp-page-ico">' + a.ico + '</span>'
+        + '<img src="' + a.img + '" alt="' + a.metier + '" style="width:64px;height:64px;border-radius:12px;object-fit:cover;margin:0 auto 8px;display:block;border:1px solid rgba(200,120,0,.3)">'
         + '<div class="btp-page-metier">' + a.metier + '</div>'
         + '<div class="btp-page-desc">' + a.desc + '</div>'
         + '</div>';
