@@ -100,7 +100,7 @@ var modalHtml = `
       <div class="btp-grid" id="btp-metier-grid"></div>
       <div class="btp-sel-label" id="btp-sel-label">✅ Corps de métier sélectionné</div>
       <div class="btp-form" id="btp-form">
-        <label class="btp-lbl">② Décrivez vos travaux *</label>
+        <label class="btp-lbl">② Décrivez vos Travaux &amp; Besoins *</label>
         <textarea class="btp-textarea" id="btp-travaux" placeholder="Ex: Crépissage d'une pièce 20m², pose de carrelage 15m²..."></textarea>
         <label class="btp-lbl">Localité / Commune *</label>
         <input type="text" class="btp-input" id="btp-localite" placeholder="Ex: Cocody Angré, Abobo...">
@@ -111,7 +111,7 @@ var modalHtml = `
         <div class="btp-price-row">
           <div>
             <label class="btp-lbl">Budget estimé</label>
-            <select class="btp-select" id="btp-budget">
+            <select class="btp-select" id="btp-budget" onchange="btpUpdAcompte()">
               <option value="0">À définir</option>
               <option value="25000">~25 000 F</option>
               <option value="50000">~50 000 F</option>
@@ -131,11 +131,19 @@ var modalHtml = `
             </select>
           </div>
         </div>
+        <div style="background:rgba(200,120,0,.08);border:1px solid rgba(200,120,0,.3);border-radius:9px;padding:10px 13px;margin-bottom:10px;font-size:.72em;color:#e8a020;line-height:1.6">
+          💡 <strong>Acompte requis : 50% du budget estimé</strong><br>
+          <span style="color:var(--dim)">Le solde sera réglé à la fin des travaux.</span><br>
+          <span id="btp-acompte-display" style="color:var(--gL);font-weight:bold;font-size:1.1em"></span>
+        </div>
         <div style="font-size:.68em;color:var(--dim);margin-bottom:10px;line-height:1.5">
           ③ Choisissez votre mode de contact avec l'artisan TCL :
         </div>
         <button class="btp-wave-btn" onclick="btpPayerWave()">
-          💳 Réserver via Wave (+225 01 41 86 14 84)
+          💳 Réserver via Wave — Acompte 50% (+225 01 41 86 14 84)
+        </button>
+        <button class="btp-wave-btn" id="btp-confirmer-btn" onclick="btpConfirmerPaiement()" style="display:none;background:linear-gradient(135deg,#005c10,#1a8a2e)">
+          ✅ J'ai effectué le Paiement — Générer le Bon
         </button>
         <button class="btp-wa-btn" onclick="btpContactWA()">
           📲 Contacter directement par WhatsApp
@@ -222,38 +230,69 @@ window.openBTPFor = function(id) {
 
 window.btpPayerWave = function() {
   var trav = (document.getElementById('btp-travaux') || {}).value || '';
-  var loc = (document.getElementById('btp-localite') || {}).value || '';
-  var nom = (document.getElementById('btp-nom') || {}).value || '';
-  var tel = (document.getElementById('btp-tel') || {}).value || '';
+  var loc  = (document.getElementById('btp-localite') || {}).value || '';
+  var nom  = (document.getElementById('btp-nom') || {}).value || '';
+  var tel  = (document.getElementById('btp-tel') || {}).value || '';
   var budget = parseInt((document.getElementById('btp-budget') || {}).value) || 0;
   if (!btpMetierSel || !trav.trim() || !loc.trim() || !nom.trim() || !tel.trim()) {
     if (typeof toast === 'function') toast('Remplissez tous les champs requis *');
     return;
   }
-  var amount = budget > 0 ? budget : 25000; /* Acompte minimal */
-  var waveUrl = WAVE_QUINC.url + '?amount=' + amount;
+  /* 50% du budget estimé comme acompte */
+  var acompte = budget > 0 ? Math.round(budget * 0.5) : 25000;
+  var waveUrl = WAVE_QUINC.url + '?amount=' + acompte;
+  /* Stocker les infos pour le bon de commande après paiement */
+  window._btpLastOrder = {
+    metier: btpMetierSel.metier,
+    ico:    btpMetierSel.ico,
+    trav:   trav,
+    loc:    loc,
+    nom:    nom,
+    tel:    tel,
+    budget: budget,
+    acompte: acompte,
+    delai:  (document.getElementById('btp-delai') || {}).value || '',
+    ref:    'BTP-' + Date.now().toString(36).toUpperCase()
+  };
   window.open(waveUrl, '_blank');
-  /* Notification WhatsApp Admin */
-  var ref = 'BTP-' + Date.now().toString(36).toUpperCase();
+  /* Afficher le bouton de confirmation */
+  var btnConf = document.getElementById('btp-confirmer-btn');
+  if (btnConf) btnConf.style.display = 'block';
+  if (typeof toast === 'function') toast('💳 Paiement Wave ouvert — cliquez "J\'ai effectué le Paiement" après');
+};
+
+window.btpConfirmerPaiement = function() {
+  var o = window._btpLastOrder;
+  if (!o) { if (typeof toast === 'function') toast('Effectuez d\'abord le paiement Wave'); return; }
+  /* Message WhatsApp Admin avec Bon de Commande */
   var msg = [
-    '🏗️ *DEMANDE ARTISAN BTP TCL*',
-    'Réf: *' + ref + '*',
+    '🏗️ *BON DE COMMANDE ARTISAN BTP TCL*',
+    '━━━━━━━━━━━━━━━━━━━━━━',
+    '📋 Réf: *' + o.ref + '*',
+    '🔨 Métier: *' + o.ico + ' ' + o.metier + '*',
     '',
-    '🔨 Métier: *' + btpMetierSel.ico + ' ' + btpMetierSel.metier + '*',
-    '📋 Travaux: ' + trav,
-    '📍 Localité: ' + loc,
-    '👤 Client: ' + nom,
-    '📞 Tél: ' + tel,
-    '💰 Budget: ' + (budget > 0 ? new Intl.NumberFormat('fr-FR').format(budget) + ' FCFA' : 'À définir'),
-    '⏰ Délai: ' + ((document.getElementById('btp-delai') || {}).value || ''),
+    '👤 Client: *' + o.nom + '*',
+    '📞 Tél: ' + o.tel,
+    '📍 Localité: ' + o.loc,
     '',
-    '💳 Paiement Wave en cours → +225 ' + WAVE_QUINC.tel,
-    '📲 Portail TCL VoteConnect'
+    '📝 Travaux & Besoins:',
+    '   ' + o.trav,
+    '',
+    '⏰ Délai: ' + o.delai,
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━',
+    '💰 Budget total estimé: *' + (o.budget > 0 ? new Intl.NumberFormat('fr-FR').format(o.budget) + ' FCFA' : 'À définir') + '*',
+    '✅ *ACOMPTE 50% PAYÉ via Wave: ' + new Intl.NumberFormat('fr-FR').format(o.acompte) + ' FCFA*',
+    '⏳ Solde restant: *' + (o.budget > 0 ? new Intl.NumberFormat('fr-FR').format(o.budget - o.acompte) + ' FCFA' : 'À définir à la fin des travaux') + '*',
+    '━━━━━━━━━━━━━━━━━━━━━━',
+    '📲 Portail TCL VoteConnect · +225 01 41 86 14 84'
   ].join('\n');
-  setTimeout(function() {
-    window.open('https://wa.me/' + WA_BTP + '?text=' + encodeURIComponent(msg), '_blank');
-  }, 1500);
-  if (typeof toast === 'function') toast('✅ Paiement Wave + Notification envoyée !');
+  window.open('https://wa.me/' + WA_BTP + '?text=' + encodeURIComponent(msg), '_blank');
+  if (typeof toast === 'function') toast('✅ Bon de commande envoyé à l\'Admin !');
+  /* Réinitialiser */
+  var btnConf = document.getElementById('btp-confirmer-btn');
+  if (btnConf) btnConf.style.display = 'none';
+  window._btpLastOrder = null;
 };
 
 window.btpContactWA = function() {
@@ -299,6 +338,18 @@ window.openBTP = function() {
 
 window.closeBTP = function() {
   document.getElementById('btp-overlay').classList.remove('on');
+};
+
+window.btpUpdAcompte = function() {
+  var budget = parseInt((document.getElementById('btp-budget') || {}).value) || 0;
+  var el = document.getElementById('btp-acompte-display');
+  if (!el) return;
+  if (budget > 0) {
+    var acompte = Math.round(budget * 0.5);
+    el.textContent = '→ Acompte Wave : ' + new Intl.NumberFormat('fr-FR').format(acompte) + ' FCFA (50%)';
+  } else {
+    el.textContent = '';
+  }
 };
 
 /* ── Ajouter bouton BTP dans la nav Client ── */
@@ -352,3 +403,4 @@ if (typeof ROLE !== 'undefined' && ROLE) {
 console.log('[BTP-PRESTATIONS.JS] Module Artisans BTP chargé ✅ — 10 métiers disponibles');
 
 })();
+
