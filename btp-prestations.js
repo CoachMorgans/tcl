@@ -74,6 +74,7 @@ var css = `
 
 /* Page BTP dans l'app */
 #pg-cli-btp{padding:14px 14px 140px}
+#pg-cli-btp.on{display:block !important}
 .btp-page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px;margin-bottom:16px}
 .btp-page-card{background:var(--card);border:1px solid rgba(200,120,0,.25);border-radius:13px;padding:16px 12px;text-align:center;cursor:pointer;transition:all .3s}
 .btp-page-card:hover{border-color:rgba(200,120,0,.6);transform:translateY(-2px);box-shadow:0 0 22px rgba(200,120,0,.2)}
@@ -149,7 +150,7 @@ document.body.insertAdjacentHTML('beforeend', modalHtml);
 
 /* ── Page BTP dans le shell ── */
 var btpPageHtml = `
-<div id="pg-cli-btp" class="page" style="display:none">
+<div id="pg-cli-btp" class="page" style="padding:14px 14px 140px;display:none">
   <div class="page-hd">
     <div class="page-title" style="color:#e8a020">🏗️ Artisans BTP — Prestations TCL</div>
     <div class="ci-rule" style="background:linear-gradient(90deg,transparent,#e8a020,var(--yL),#e8a020,transparent)"></div>
@@ -313,10 +314,18 @@ function injectBTPNav() {
     item.id = 'nav-btp';
     item.innerHTML = '<div class="btp-nav-ico">🏗️</div><div class="btp-nav-lbl">BTP</div>';
     item.onclick = function() {
-      document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('on'); });
-      document.querySelectorAll('.nav-item, .btp-nav-trigger').forEach(function(n) { n.classList.remove('active','active-y'); });
+      document.querySelectorAll('.page').forEach(function(p) {
+        p.classList.remove('on');
+        p.style.display = 'none';
+      });
+      document.querySelectorAll('.nav-item, .btp-nav-trigger').forEach(function(n) {
+        n.classList.remove('active','active-y');
+      });
       var pg = document.getElementById('pg-cli-btp');
-      if (pg) pg.classList.add('on');
+      if (pg) {
+        pg.style.display = 'block';
+        pg.classList.add('on');
+      }
       item.classList.add('active');
       window.scrollTo(0,0);
     };
