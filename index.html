@@ -932,7 +932,7 @@ var ARTISANS_DEMO=[
   {id:'ART-013',nom:'KOFFI Yvette',specialite:'Vente & Location Immobilière',commune:'Plateau',region:'Abidjan',tel:'+225 07 55 44 33',formule:'Adhérent',actif:true},
   {id:'ART-014',nom:'COULIBALY Mamadou',specialite:'Vente & Location Immobilière',commune:'Cocody',region:'Abidjan',tel:'+225 05 77 88 99',formule:'Cadre Actif',actif:true}
 ];
-var CF_DB_URL='https://script.google.com/macros/s/AKfycbzdqCRk06C35clJhQcDS1AN3eZvzq4JO5UjsRU1E7y1pDfTu-xHt6ppSM6pD0UnGn10/exec';
+var CF_DB_URL='https://script.google.com/macros/s/AKfycbwI46jHy_eQP0sdwRfqoU9jt32KjL4muCLneCIl3z_OI6KT7hdtMf7FZP9Tt5g9EU2d/exec';
 var SPEC_EMOJI={
   'Maçonnerie & Staff':'🧱',
   'Menuiserie & Vitrerie':'🪚',
@@ -1117,7 +1117,7 @@ function handleFloatBtn(){
 function loadArtisans(){
   document.getElementById('art-loading').style.display='block';
   document.getElementById('artisans-grid').innerHTML='';
-  fetch(CF_DB_URL+'?action=get_artisans',{signal:AbortSignal.timeout?AbortSignal.timeout(8000):undefined})
+  fetch(CF_DB_URL+'?route=get_artisans',{signal:AbortSignal.timeout?AbortSignal.timeout(8000):undefined})
     .then(function(r){return r.json();})
     .then(function(data){
       document.getElementById('art-loading').style.display='none';
